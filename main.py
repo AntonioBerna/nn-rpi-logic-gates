@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import numpy as np
 
-led_pins = [12, 23, 32, 33]
+led_pins = [12, 23, 32, 40]
 
 training_and = [
     {'input': [0, 0], 'output': 0},
@@ -38,7 +38,7 @@ training_xor = [
     {'input': [1, 1], 'output': 0},
 ]
 
-training_data = training_nand
+training_data = training_and
 
 # Inizializzazione dei pin GPIO
 GPIO.setmode(GPIO.BOARD)
