@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import numpy as np
 
-led_pins = [23, 32, 33, 12]
+led_pins = [12, 23, 32, 33]
 
 training_and = [
     {'input': [0, 0], 'output': 0},
