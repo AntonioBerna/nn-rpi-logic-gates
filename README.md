@@ -36,7 +36,8 @@ where ```<ip>``` can be determined in the following ways:
 - on Linux using the command ```ip route | grep default```
 - on macOS using the command ```netstat -nr | grep default```
 
-> **NOTE:** ```nmap``` is a very famous tool for carrying out port scanning, i.e. aimed at identifying open ports on a target computer or even on ranges of IP addresses, in order to determine which network services are available. For more information [click here](https://nmap.org/book/man.html).
+>  [!NOTE]
+> ```nmap``` is a very famous tool for carrying out port scanning, i.e. aimed at identifying open ports on a target computer or even on ranges of IP addresses, in order to determine which network services are available. For more information [click here](https://nmap.org/book/man.html).
 
 In short, depending on the type of method you decide to use, the Raspberry Pi always has the same IP address while remaining connected to the wifi network. So if for example I use ```arp -a``` among the list of devices connected to the wifi network we get:
 
@@ -63,7 +64,8 @@ At this point we have to copy the project folder (```nn-rpi-logic-gates/```) loc
 scp -r ~/Desktop/nn-rpi-logic-gates pi@192.168.1.16:/home/pi
 ```
 
-> **NOTE:** Clearly to run the ```scp``` command you must have first cloned this repository on your computer with the command ```git clone```.
+> [!NOTE]
+> Clearly to run the ```scp``` command you must have first cloned this repository on your computer with the command ```git clone```.
 
 Well, now that the code is ready to run we just have to take care of the assembly diagram as follows:
 
@@ -124,7 +126,8 @@ GPIO26 (37) (38) GPIO20
 For further information, please refer to https://pinout.xyz/
 ```
 
-> **NOTE:** In particular, if you look at the code present in the ```src/main.py``` file, you will find the ```led_pins``` list in which the pins on which I connected the 4 led diodes are saved. Basically the pins to refer to, from the point of view of the code, are those that are shown between the round brackets.
+> [!NOTE]
+> In particular, if you look at the code present in the ```src/main.py``` file, you will find the ```led_pins``` list in which the pins on which I connected the 4 led diodes are saved. Basically the pins to refer to, from the point of view of the code, are those that are shown between the round brackets.
 
 Perfect, now we just have to run the code to see how the neural network is trained based on the logic gate that is selected. In particular, from the terminal with the active SSH session we use the following command:
 
@@ -183,7 +186,9 @@ In this way, using the ```python src/main.py``` command again we get:
 
 # Mathematics of the Machine Learning Model
 I left the section on the math used to build the neural network at the end because most people just hear the word "math" get the chills. Precisely for this reason I will try to explain myself as simply as possible.
-> **NOTE:** In this section we refer to the code in ```src/nn.py```.
+
+> [!NOTE]
+> In this section we refer to the code in ```src/nn.py```.
 
 The idea is as follows: the ```NeuralNetwork``` class is like a little math whiz learning to solve logic gate problems. Wearing his magical hat, the wizard uses calculating magic to train. First, he starts with random weights, like numbers picked at random from a magic cylinder. Then, when shown an example of a logic gate, the magician does some calculations with his secret formulas. Use the sigmoidal magic function to transform the numbers and calculate the final output. If the output is incorrect, the magician adjusts his weights based on the error made, using the descending gradient formula. He keeps repeating these math spells for a while, until he can guess the output correctly for all the training examples. And voila! The wizard has mastered the logic gates! Now he can help you solve logic problems with his math magic!
 
@@ -195,4 +200,5 @@ where $\eta$ is the learning rate and $\sigma'(x)$ is the derivative of the sigm
 
 Thus, the math whiz trains his neural network using these magic formulas, trying to minimize the error and correctly guess the output of the logic gates.
 
-> **NOTE:** I won't dwell too much on mathematics because I'm preparing a pdf that starts from the basics in order to fully understand the algorithms behind neural networks.
+> [!NOTE]
+> I won't dwell too much on mathematics because I'm preparing a pdf that starts from the basics in order to fully understand the algorithms behind neural networks.
