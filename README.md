@@ -1,14 +1,10 @@
-# nn-rpi-logic-gates
-- [Introduction](#introduction)
-- [Logic Gates](#logic-gates)
-- [Usage Docs](#usage-docs)
-- [Mathematics of the Machine Learning Model](#mathematics-of-the-machine-learning-model)
-
 # Introduction
+
 This morning I woke up with the desire to create a project a little different from the usual. To understand, I'm not talking about the classic neural network that returns random results (on the terminal) because that would just be boring.
 I felt like combining the power of Machine Learning with Electronics and this is the result: creating a project that is based on training a simple neural network to recognize logic gates in Boole's algebra. But in this way the project would have been based only on a simple (depending on your point of view) math problem. Then I asked myself: "What if we used Electronics to visualize the output of the neural network training?". Specifically using 4 led diodes (each representing one of the outputs of a single logic port) and running the code on my Raspberry Pi 3 could come up with a really interesting project!
 
 # Logic Gates
+
 First I give a brief review for those who have no idea what just the logic gates of boolean algebra.
 
 Boole's algebra logic gates are fundamental elements in digital electronics used to manipulate binary signals, represented as truth values ($0$ or $1$). Logic gates take one or more inputs and produce an output according to the rules of Boole's algebra.
@@ -21,7 +17,7 @@ There are several types of logic gates, of which the most common are:
 
 These logic gates can be combined to create more complex circuits and perform more sophisticated logic operations. For example, the AND, OR, and NOT gates can be combined to create an XOR (exclusive OR) logic gate, a NAND (NOT-AND) logic gate, a NOR (NOT-OR) logic gate, and many others.
 
-# Usage Docs
+# Mini docs
 In this section we see step by step how to replicate the project on your own Raspberry Pi!
 
 First of all you need to make sure you have Raspbian operating system installed on your Raspberry Pi, click on the link to download [Raspberry Pi Imager](https://www.raspberrypi.com/software/) (if you have any problems, don't hesitate to contact me). I won't go into the details of setting up the operating system on a Raspberry Pi in this tutorial, so I'll assume you just plug the Raspberry Pi into a power outlet to boot Raspbian OS.
