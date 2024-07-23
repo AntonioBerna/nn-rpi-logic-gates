@@ -58,14 +58,14 @@ then, by entering the Raspberry Pi login `password`, hopefully we will end up in
 ```
 pi@raspberrypi:~ $
 ```
-At this point we have to copy the project folder (```nn-rpi-logic-gates/```) located on our computer into the Raspberry Pi using the handy ```scp``` command as follows:
+At this point we have to copy the project folder (`nn-rpi-logic-gates/`) located on our computer into the Raspberry Pi using the handy `scp` command as follows:
 
 ```
 scp -r ~/Desktop/nn-rpi-logic-gates pi@192.168.1.18:/home/pi
 ```
 
 > [!NOTE]
-> Clearly to run the ```scp``` command you must have first cloned this repository on your computer with the command ```git clone```.
+> Clearly to run the `scp` command you must have first cloned this repository on your computer with the command `git clone`.
 
 Well, now that the code is ready to run we just have to take care of the assembly diagram as follows:
 
@@ -73,7 +73,7 @@ Well, now that the code is ready to run we just have to take care of the assembl
     <img src="imgs/project.png" width="500">
 </p>
 
-Unfortunately, using the Raspberry Pi it is more difficult to know the pinout of the board (unlike Arduino). For this reason, if we go back to the terminal with the SSH connection active and use the ```pinout``` command we get:
+Unfortunately, using the Raspberry Pi it is more difficult to know the pinout of the board (unlike Arduino). For this reason, if we go back to the terminal with the SSH connection active and use the `pinout` command we get:
 
 ```
 ,--------------------------------.
@@ -127,7 +127,7 @@ For further information, please refer to https://pinout.xyz/
 ```
 
 > [!NOTE]
-> In particular, if you look at the code present in the ```src/main.py``` file, you will find the ```led_pins``` list in which the pins on which I connected the 4 led diodes are saved. Basically the pins to refer to, from the point of view of the code, are those that are shown between the round brackets.
+> In particular, if you look at the code present in the `src/main.py` file, you will find the `led_pins` list in which the pins on which I connected the 4 led diodes are saved. Basically the pins to refer to, from the point of view of the code, are those that are shown between the round brackets.
 
 Perfect, now we just have to run the code to see how the neural network is trained based on the logic gate that is selected. In particular, from the terminal with the active SSH session we use the following command:
 
@@ -165,7 +165,7 @@ Xor model in progress.
 [1 1] -> 0.07309295453195162
 ```
 
-Since it is difficult for me to show the sequence of led lighting for each logic gate, we modify the ```training_data.json``` file leaving only the XOR logic gate (which is the most difficult to train):
+Since it is difficult for me to show the sequence of led lighting for each logic gate, we modify the `training_data.json` file leaving only the XOR logic gate (which is the most difficult to train):
 
 ```
 {	
@@ -178,7 +178,7 @@ Since it is difficult for me to show the sequence of led lighting for each logic
 }
 ```
 
-In this way, using the ```python src/main.py``` command again we get:
+In this way, using the `python src/main.py` command again we get:
 
 <p align="center">
     <img src="imgs/xor.png" width="300">
@@ -188,15 +188,21 @@ In this way, using the ```python src/main.py``` command again we get:
 I left the section on the math used to build the neural network at the end because most people just hear the word "math" get the chills. Precisely for this reason I will try to explain myself as simply as possible.
 
 > [!NOTE]
-> In this section we refer to the code in ```src/nn.py```.
+> In this section we refer to the code in `src/nn.py`.
 
-The idea is as follows: the ```NeuralNetwork``` class is like a little math whiz learning to solve logic gate problems. Wearing his magical hat, the wizard uses calculating magic to train. First, he starts with random weights, like numbers picked at random from a magic cylinder. Then, when shown an example of a logic gate, the magician does some calculations with his secret formulas. Use the sigmoidal magic function to transform the numbers and calculate the final output. If the output is incorrect, the magician adjusts his weights based on the error made, using the descending gradient formula. He keeps repeating these math spells for a while, until he can guess the output correctly for all the training examples. And voila! The wizard has mastered the logic gates! Now he can help you solve logic problems with his math magic!
+The idea is as follows: the `NeuralNetwork` class is like a little math whiz learning to solve logic gate problems. Wearing his magical hat, the wizard uses calculating magic to train. First, he starts with random weights, like numbers picked at random from a magic cylinder. Then, when shown an example of a logic gate, the magician does some calculations with his secret formulas. Use the sigmoidal magic function to transform the numbers and calculate the final output. If the output is incorrect, the magician adjusts his weights based on the error made, using the descending gradient formula. He keeps repeating these math spells for a while, until he can guess the output correctly for all the training examples. And voila! The wizard has mastered the logic gates! Now he can help you solve logic problems with his math magic!
 
-The ```NeuralNetwork``` class uses the sigmoid activation function, defined as: $$\sigma(x) = \frac{1}{1 + e^{-x}}$$
+The `NeuralNetwork` class uses the sigmoid activation function, defined as:
 
-to transform the values ​​of neurons in the network. During training, the descending gradient technique is used to update the network weights. The error between the expected output and the actual output is calculated and back-propagated through the network. The weights are then updated using the formula: $$w_{+} = w + \eta \cdot \text{input} \cdot \text{error} \cdot \sigma'(\text{output})$$
+$$\sigma(x) = \frac{1}{1 + e^{-x}}$$
 
-where $\eta$ is the learning rate and $\sigma'(x)$ is the derivative of the sigmoid function, defined as: $$\sigma'(x) = x \cdot (1 - x)$$
+to transform the values ​​of neurons in the network. During training, the descending gradient technique is used to update the network weights. The error between the expected output and the actual output is calculated and back-propagated through the network. The weights are then updated using the formula:
+
+$$w_{+} = w + \eta \cdot \text{input} \cdot \text{error} \cdot \sigma'(\text{output})$$
+
+where $\eta$ is the learning rate and $\sigma'(x)$ is the derivative of the sigmoid function, defined as:
+
+$$\sigma'(x) = x \cdot (1 - x)$$
 
 Thus, the math whiz trains his neural network using these magic formulas, trying to minimize the error and correctly guess the output of the logic gates.
 
