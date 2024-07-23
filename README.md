@@ -26,34 +26,34 @@ Generally to use a Raspberry Pi we need a mouse and keyboard, but in this case I
 
 At this point we need to look up the IP address of the Raspberry Pi when it's connected on the same wifi network as ours and [there are various ways to do it](https://www.raspberrypi.com/documentation/computers/remote-access.html).
 
-I personally use the ```arp -a``` command but if that doesn't work then play it safe using ```nmap``` with the following command:
+I personally use the following command:
 
 ```
 nmap -sn <ip>/24
 ```
 
-where ```<ip>``` can be determined in the following ways:
-- on Linux using the command ```ip route | grep default```
-- on macOS using the command ```netstat -nr | grep default```
+where `<ip>` can be determined in the following ways:
+- on Linux using the command `ip route | grep default`
+- on macOS using the command `netstat -nr | grep default`
 
 >  [!NOTE]
-> ```nmap``` is a very famous tool for carrying out port scanning, i.e. aimed at identifying open ports on a target computer or even on ranges of IP addresses, in order to determine which network services are available. For more information [click here](https://nmap.org/book/man.html).
+> `nmap` is a very famous tool for carrying out port scanning, i.e. aimed at identifying open ports on a target computer or even on ranges of IP addresses, in order to determine which network services are available. For more information [click here](https://nmap.org/book/man.html).
 
-In short, depending on the type of method you decide to use, the Raspberry Pi always has the same IP address while remaining connected to the wifi network. So if for example I use ```arp -a``` among the list of devices connected to the wifi network we get:
-
-```
-raspberrypi (192.168.1.16)
-```
-
-where ```raspberrypi``` represents the ```hostname``` of the Raspberry Pi.
-
-Now that we have obtained the IP address we can connect to the Raspberry Pi via the SSH protocol with the following command:
+In short, depending on the type of method you decide to use, the Raspberry Pi always has the same IP address while remaining connected to the wifi network. So if for example I use `nmap -sn <ip>/24` among the list of devices connected to the wifi network we get:
 
 ```
-ssh pi@192.168.1.16
+...
+Nmap scan report for raspberrypi (192.168.1.18)
+...
 ```
 
-then, by entering the Raspberry Pi login password, hopefully we will end up in the following terminal:
+where `raspberrypi` represents the `hostname` of the Raspberry Pi. Now that we have obtained the IP address we can connect to the Raspberry Pi via the SSH protocol with the following command:
+
+```
+ssh pi@192.168.1.18
+```
+
+then, by entering the Raspberry Pi login `password`, hopefully we will end up in the following terminal:
 
 ```
 pi@raspberrypi:~ $
@@ -61,7 +61,7 @@ pi@raspberrypi:~ $
 At this point we have to copy the project folder (```nn-rpi-logic-gates/```) located on our computer into the Raspberry Pi using the handy ```scp``` command as follows:
 
 ```
-scp -r ~/Desktop/nn-rpi-logic-gates pi@192.168.1.16:/home/pi
+scp -r ~/Desktop/nn-rpi-logic-gates pi@192.168.1.18:/home/pi
 ```
 
 > [!NOTE]
