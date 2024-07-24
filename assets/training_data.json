@@ -1,29 +1,29 @@
 {
-	"training_and": [
+	"training_AND": [
     	{"input": [0, 0], "output": 0},
     	{"input": [0, 1], "output": 0},
     	{"input": [1, 0], "output": 0},
     	{"input": [1, 1], "output": 1}
   	],
-  	"training_or": [
+  	"training_OR": [
     	{"input": [0, 0], "output": 0},
     	{"input": [0, 1], "output": 1},
     	{"input": [1, 0], "output": 1},
     	{"input": [1, 1], "output": 1}
 	 ],
-	 "training_nand": [
+	 "training_NAND": [
 		{"input": [0, 0], "output": 1},
 		{"input": [0, 1], "output": 1},
 		{"input": [1, 0], "output": 1},
 		{"input": [1, 1], "output": 0}
 	 ],
-	 "training_nor": [
+	 "training_NOR": [
 		{"input": [0, 0], "output": 1},
 		{"input": [0, 1], "output": 0},
 		{"input": [1, 0], "output": 0},
 		{"input": [1, 1], "output": 0}
 	 ],
-	 "training_xor": [
+	 "training_XOR": [
 		{"input": [0, 0], "output": 0},
 		{"input": [0, 1], "output": 1},
 		{"input": [1, 0], "output": 1},

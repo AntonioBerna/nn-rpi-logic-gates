@@ -15,7 +15,7 @@ if __name__ == "__main__":
             for key in training_data:
                 neural_network = NeuralNetwork(input_size=2, hidden_size=4, output_size=1)
                 model = training_data[key]
-                print(f"{key[9:].capitalize()} model in progress.")
+                print(f"{key[9:]} model in progress.")
                 for _ in range(10000):
                     for features in model:
                         inputs = np.array(features["input"])

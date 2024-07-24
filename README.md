@@ -138,27 +138,27 @@ python src/main.py
 In order to obtain the following outputs:
 
 ```
-And model in progress.
+AND model in progress.
 [0 0] -> 0.0016023969766617023
 [0 1] -> 0.03462897741415107
 [1 0] -> 0.041200871702425125
 [1 1] -> 0.9426577317372801
-Or model in progress.
+OR model in progress.
 [0 0] -> 0.06636795579393338
 [0 1] -> 0.9662234138295764
 [1 0] -> 0.9641925876178026
 [1 1] -> 0.97962216640267
-Nand model in progress.
+NAND model in progress.
 [0 0] -> 0.9974056365462818
 [0 1] -> 0.9574790586890473
 [1 0] -> 0.9666920991443287
 [1 1] -> 0.053627724389366874
-Nor model in progress.
+NOR model in progress.
 [0 0] -> 0.9505501441258005
 [0 1] -> 0.028460886278734884
 [1 0] -> 0.02732870686749378
 [1 1] -> 0.008136723247384976
-Xor model in progress.
+XOR model in progress.
 [0 0] -> 0.12040913688930115
 [0 1] -> 0.9037882317417703
 [1 0] -> 0.9114282554472802
