@@ -129,7 +129,15 @@ For further information, please refer to https://pinout.xyz/
 > [!NOTE]
 > In particular, if you look at the code present in the `src/main.py` file, you will find the `led_pins` list in which the pins on which I connected the 4 led diodes are saved. Basically the pins to refer to, from the point of view of the code, are those that are shown between the round brackets.
 
-Perfect, now we just have to run the code to see how the neural network is trained based on the logic gate that is selected. In particular, from the terminal with the active SSH session we use the following command:
+Perfect, now we just have to run the code to see how the neural network is trained based on the logic gate that is selected.
+
+> [!WARNING]
+> Since the neural network uses the `numpy` library, we can install it using the command `sudo apt install python3-numpy`. It is preferable to use the `apt` package manager instead of `pip` to avoid problems due to the possible breakage of the Python package manager. Also if you do not have `pip` on your Raspberry Pi, you can install it using the command `sudo apt install python3-pip`. In case of problems use the command `sudo apt-get install --fix-missing python3-pip`.
+
+> [!WARNING]
+> The `numpy` library is not installed in a separate virtual environment because otherwise there would be compatibility problems with the `RPi.GPIO` library which is fundamental for managing LED diodes.
+
+In particular, from the terminal with the active SSH session we use the following command:
 
 ```
 python src/main.py
@@ -143,21 +151,25 @@ AND model in progress.
 [0 1] -> 0.03462897741415107
 [1 0] -> 0.041200871702425125
 [1 1] -> 0.9426577317372801
+
 OR model in progress.
 [0 0] -> 0.06636795579393338
 [0 1] -> 0.9662234138295764
 [1 0] -> 0.9641925876178026
 [1 1] -> 0.97962216640267
+
 NAND model in progress.
 [0 0] -> 0.9974056365462818
 [0 1] -> 0.9574790586890473
 [1 0] -> 0.9666920991443287
 [1 1] -> 0.053627724389366874
+
 NOR model in progress.
 [0 0] -> 0.9505501441258005
 [0 1] -> 0.028460886278734884
 [1 0] -> 0.02732870686749378
 [1 1] -> 0.008136723247384976
+
 XOR model in progress.
 [0 0] -> 0.12040913688930115
 [0 1] -> 0.9037882317417703
