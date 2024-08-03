@@ -169,7 +169,7 @@ Since it is difficult for me to show the sequence of led lighting for each logic
 
 ```
 {	
-    "training_xor": [
+    "training_XOR": [
         {"input": [0, 0], "output": 0},
         {"input": [0, 1], "output": 1},
         {"input": [1, 0], "output": 1},
