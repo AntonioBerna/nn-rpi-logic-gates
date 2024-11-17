@@ -208,14 +208,8 @@ The `NeuralNetwork` class uses the sigmoid activation function, defined as:
 
 $$\sigma(x) = \frac{1}{1 + e^{-x}}$$
 
-to transform the values ​​of neurons in the network. During training, the descending gradient technique is used to update the network weights. The error between the expected output and the actual output is calculated and back-propagated through the network. The weights are then updated using the formula:
-
-$$w_{+} = w + \eta \cdot \text{input} \cdot \text{error} \cdot \sigma'(\text{output})$$
-
-where $\eta$ is the learning rate and $\sigma'(x)$ is the derivative of the sigmoid function, defined as:
-
-$$\sigma'(x) = x \cdot (1 - x)$$
-
+to transform the values of neurons in the network. During training, the descending gradient technique is used to update the network weights. The error between the expected output and the actual output is calculated and back-propagated through the network. The weights are then updated using the formula: $$w_{+} = w + \eta \cdot \text{input} \cdot \text{error} \cdot \sigma'(\text{output})$$
+where $\eta$ is the learning rate and $\sigma'(x)$ is the derivative of the sigmoid function, defined as: $$\sigma'(x) = x \cdot (1 - x)$$
 Thus, the math whiz trains his neural network using these magic formulas, trying to minimize the error and correctly guess the output of the logic gates.
 
 > [!NOTE]
