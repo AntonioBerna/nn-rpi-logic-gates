@@ -1,4 +1,10 @@
-# Introduction
+# nn-rpi-logic-gates
+
+![GitHub License](https://img.shields.io/github/license/antonioberna/nn-rpi-logic-gates)
+![GitHub repo size](https://img.shields.io/github/repo-size/antonioberna/nn-rpi-logic-gates)
+![GitHub Created At](https://img.shields.io/github/created-at/antonioberna/nn-rpi-logic-gates)
+
+## Introduction
 
 This morning I woke up with the desire to create a project a little different from the usual. To understand, I'm not talking about the classic neural network that returns random results (on the terminal) because that would just be boring.
 I felt like combining the power of Machine Learning with Electronics and this is the result: creating a project that is based on training a simple neural network to recognize logic gates in Boole's algebra. But in this way the project would have been based only on a simple (depending on your point of view) math problem. Then I asked myself: "What if we used Electronics to visualize the output of the neural network training?". Specifically using 4 led diodes (each representing one of the outputs of a single logic port) and running the code on my Raspberry Pi 3 could come up with a really interesting project!
@@ -17,7 +23,7 @@ There are several types of logic gates, of which the most common are:
 
 These logic gates can be combined to create more complex circuits and perform more sophisticated logic operations. For example, the AND, OR, and NOT gates can be combined to create an XOR (exclusive OR) logic gate, a NAND (NOT-AND) logic gate, a NOR (NOT-OR) logic gate, and many others.
 
-# Mini docs
+## Mini docs
 
 In this section we see step by step how to replicate the project on your own Raspberry Pi!
 
