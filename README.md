@@ -3,7 +3,7 @@
 This morning I woke up with the desire to create a project a little different from the usual. To understand, I'm not talking about the classic neural network that returns random results (on the terminal) because that would just be boring.
 I felt like combining the power of Machine Learning with Electronics and this is the result: creating a project that is based on training a simple neural network to recognize logic gates in Boole's algebra. But in this way the project would have been based only on a simple (depending on your point of view) math problem. Then I asked myself: "What if we used Electronics to visualize the output of the neural network training?". Specifically using 4 led diodes (each representing one of the outputs of a single logic port) and running the code on my Raspberry Pi 3 could come up with a really interesting project!
 
-# Logic Gates
+## Logic Gates
 
 First I give a brief review for those who have no idea what just the logic gates of boolean algebra.
 
@@ -12,12 +12,13 @@ Boole's algebra logic gates are fundamental elements in digital electronics used
 There are several types of logic gates, of which the most common are:
 
 <p align="center">
-    <img src="imgs/logic-gates.png">
+    <img src="assets/imgs/logic-gates.png">
 </p>
 
 These logic gates can be combined to create more complex circuits and perform more sophisticated logic operations. For example, the AND, OR, and NOT gates can be combined to create an XOR (exclusive OR) logic gate, a NAND (NOT-AND) logic gate, a NOR (NOT-OR) logic gate, and many others.
 
 # Mini docs
+
 In this section we see step by step how to replicate the project on your own Raspberry Pi!
 
 First of all you need to make sure you have Raspbian operating system installed on your Raspberry Pi, click on the link to download [Raspberry Pi Imager](https://www.raspberrypi.com/software/) (if you have any problems, don't hesitate to contact me). I won't go into the details of setting up the operating system on a Raspberry Pi in this tutorial, so I'll assume you just plug the Raspberry Pi into a power outlet to boot Raspbian OS.
@@ -70,7 +71,7 @@ scp -r ~/Desktop/nn-rpi-logic-gates pi@192.168.1.18:/home/pi
 Well, now that the code is ready to run we just have to take care of the assembly diagram as follows:
 
 <p align="center">
-    <img src="imgs/project.png" width="500">
+    <img src="assets/imgs/project.png" width="500">
 </p>
 
 Unfortunately, using the Raspberry Pi it is more difficult to know the pinout of the board (unlike Arduino). For this reason, if we go back to the terminal with the SSH connection active and use the `pinout` command we get:
@@ -193,30 +194,10 @@ Since it is difficult for me to show the sequence of led lighting for each logic
 In this way, using the `python src/main.py` command again we get:
 
 <p align="center">
-    <img src="imgs/xor.png" width="300">
+    <img src="assets/imgs/xor.png" width="300">
 </p>
 
-# Mathematics of the Machine Learning Model
-I left the section on the math used to build the neural network at the end because most people just hear the word "math" get the chills. Precisely for this reason I will try to explain myself as simply as possible.
+## Mathematics behind Machine Learning model
 
-> [!NOTE]
-> In this section we refer to the code in `src/nn.py`.
+For more information on the mathematics behind the neural network model, I refer you to the [pdf](assets/pdf/deck.pdf) that I'm preparing.
 
-The idea is as follows: the `NeuralNetwork` class is like a little math whiz learning to solve logic gate problems. Wearing his magical hat, the wizard uses calculating magic to train. First, he starts with random weights, like numbers picked at random from a magic cylinder. Then, when shown an example of a logic gate, the magician does some calculations with his secret formulas. Use the sigmoidal magic function to transform the numbers and calculate the final output. If the output is incorrect, the magician adjusts his weights based on the error made, using the descending gradient formula. He keeps repeating these math spells for a while, until he can guess the output correctly for all the training examples. And voila! The wizard has mastered the logic gates! Now he can help you solve logic problems with his math magic!
-
-The `NeuralNetwork` class uses the sigmoid activation function, defined as:
-
-$$\sigma(x) = \frac{1}{1 + e^{-x}}$$
-
-to transform the values of neurons in the network. During training, the descending gradient technique is used to update the network weights. The error between the expected output and the actual output is calculated and back-propagated through the network. The weights are then updated using the formula:
-
-$$w_{+} = w + \eta \cdot \text{input} \cdot \text{error} \cdot \sigma'(\text{output})$$
-
-where $\eta$ is the learning rate and $\sigma'(x)$ is the derivative of the sigmoid function, defined as:
-
-$$\sigma'(x) = x \cdot (1 - x)$$
-
-Thus, the math whiz trains his neural network using these magic formulas, trying to minimize the error and correctly guess the output of the logic gates.
-
-> [!NOTE]
-> I won't dwell too much on mathematics because I'm preparing a pdf that starts from the basics in order to fully understand the algorithms behind neural networks.
