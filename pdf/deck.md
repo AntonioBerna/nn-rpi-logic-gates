@@ -5,6 +5,10 @@ class: invert
 paginate: true
 transition: cube
 math: katex
+style: |
+    section {
+        font-family: "JetBrains Mono";
+    }
 ---
 
 # A Wizard's Journey to Master Logic Gates

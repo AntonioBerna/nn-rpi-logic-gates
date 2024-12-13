@@ -18,7 +18,7 @@ Boole's algebra logic gates are fundamental elements in digital electronics used
 There are several types of logic gates, of which the most common are:
 
 <p align="center">
-    <img src="assets/imgs/logic-gates.png">
+    <img src=".github/imgs/logic-gates.png">
 </p>
 
 These logic gates can be combined to create more complex circuits and perform more sophisticated logic operations. For example, the AND, OR, and NOT gates can be combined to create an XOR (exclusive OR) logic gate, a NAND (NOT-AND) logic gate, a NOR (NOT-OR) logic gate, and many others.
@@ -77,7 +77,7 @@ scp -r ~/Desktop/nn-rpi-logic-gates pi@192.168.1.18:/home/pi
 Well, now that the code is ready to run we just have to take care of the assembly diagram as follows:
 
 <p align="center">
-    <img src="assets/imgs/project.png" width="500">
+    <img src=".github/imgs/project.png" width="500">
 </p>
 
 Unfortunately, using the Raspberry Pi it is more difficult to know the pinout of the board (unlike Arduino). For this reason, if we go back to the terminal with the SSH connection active and use the `pinout` command we get:
@@ -184,7 +184,7 @@ XOR model in progress.
 [1 1] -> 0.07309295453195162
 ```
 
-Since it is difficult for me to show the sequence of led lighting for each logic gate, we modify the `training_data.json` file leaving only the XOR logic gate (which is the most difficult to train):
+Since it is difficult for me to show the sequence of led lighting for each logic gate, we modify the `.github/training/data.json` file leaving only the XOR logic gate (which is the most difficult to train):
 
 ```
 {	
@@ -200,10 +200,10 @@ Since it is difficult for me to show the sequence of led lighting for each logic
 In this way, using the `python src/main.py` command again we get:
 
 <p align="center">
-    <img src="assets/imgs/xor.png" width="300">
+    <img src=".github/imgs/xor.png" width="300">
 </p>
 
 ## Mathematics behind Machine Learning model
 
-For more information on the mathematics behind the neural network model, I refer you to the [pdf](assets/pdf/deck.pdf) that I'm preparing.
+For more information on the mathematics behind the neural network model, I refer you to the [pdf](.github/pdf/deck.pdf) that I'm preparing.
 

@@ -10,7 +10,7 @@ if __name__ == "__main__":
     GPIO.setup(led_pins, GPIO.OUT)
 
     try:
-        with open("assets/training_data.json", "r") as file:
+        with open(".github/training/data.json", "r") as file:
             training_data = json.load(file)
             for key in training_data:
                 neural_network = NeuralNetwork(input_size=2, hidden_size=4, output_size=1)
