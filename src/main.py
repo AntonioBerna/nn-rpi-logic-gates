@@ -4,6 +4,7 @@ import time
 
 from nn import NeuralNetwork, np
 
+
 class Main:
     def __init__(self):
         self.led_pins = [12, 23, 32, 40]
@@ -18,18 +19,22 @@ class Main:
             print("File not found!")
 
         self.training_data = training_data
-    
+
     def train_model(self):
         for key in self.training_data:
-            self.neural_network = NeuralNetwork(input_size=2, hidden_size=4, output_size=1)
+            self.neural_network = NeuralNetwork(
+                input_size=2, hidden_size=4, output_size=1
+            )
             self.model = self.training_data[key]
             print(f"{key[9:]} model in progress.")
 
             for _ in range(10_000):
                 for features in self.model:
-                        inputs = np.array(features["input"])
-                        expected_output = np.array(features["output"])
-                        self.neural_network.train(inputs, expected_output, learning_rate=0.1)
+                    inputs = np.array(features["input"])
+                    expected_output = np.array(features["output"])
+                    self.neural_network.train(
+                        inputs, expected_output, learning_rate=0.1
+                    )
 
     def set_model_output(self):
         outputs = []
@@ -52,6 +57,7 @@ class Main:
     def GPIO_clean(self):
         GPIO.output(self.led_pins, GPIO.LOW)
         GPIO.cleanup()
+
 
 if __name__ == "__main__":
     main = Main()
