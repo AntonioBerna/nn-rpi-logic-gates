@@ -4,40 +4,63 @@ import time
 
 from nn import NeuralNetwork, np
 
-if __name__ == "__main__":
-    led_pins = [12, 23, 32, 40]
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(led_pins, GPIO.OUT)
+class Main:
+    def __init__(self):
+        self.led_pins = [12, 23, 32, 40]
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(self.led_pins, GPIO.OUT)
 
-    try:
-        with open(".github/training/data.json", "r") as file:
-            training_data = json.load(file)
-            for key in training_data:
-                neural_network = NeuralNetwork(input_size=2, hidden_size=4, output_size=1)
-                model = training_data[key]
-                print(f"{key[9:]} model in progress.")
-                for _ in range(10000):
-                    for features in model:
+    def set_training_data(self):
+        try:
+            with open(".github/training/data.json", "r") as file:
+                training_data = json.load(file)
+        except FileNotFoundError:
+            print("File not found!")
+
+        self.training_data = training_data
+    
+    def train_model(self):
+        for key in self.training_data:
+            self.neural_network = NeuralNetwork(input_size=2, hidden_size=4, output_size=1)
+            self.model = self.training_data[key]
+            print(f"{key[9:]} model in progress.")
+
+            for _ in range(10_000):
+                for features in self.model:
                         inputs = np.array(features["input"])
                         expected_output = np.array(features["output"])
-                        neural_network.train(inputs, expected_output, learning_rate=0.1)
+                        self.neural_network.train(inputs, expected_output, learning_rate=0.1)
 
-                outputs = []
-                for features in model:
-                    inputs = np.array(features["input"])
-                    output = neural_network.feedforward(inputs)[0]
-                    print(f"{inputs} -> {output}")
-                    outputs.append(round(output))
+    def set_model_output(self):
+        outputs = []
+        for features in self.model:
+            inputs = np.array(features["input"])
+            output = self.neural_network.feedforward(inputs)[0]
+            print(f"{inputs} -> {output}")
+            outputs.append(round(output))
 
-                for output, pin in zip(outputs, led_pins):
-                    GPIO.output(pin, GPIO.HIGH if output else GPIO.LOW)
+        self.outputs = outputs
 
-                time.sleep(5)
-                GPIO.output(led_pins, GPIO.LOW)
-                print()
+    def GPIO_output(self):
+        for output, pin in zip(self.outputs, self.led_pins):
+            GPIO.output(pin, GPIO.HIGH if output else GPIO.LOW)
+
+        time.sleep(5)
+        GPIO.output(self.led_pins, GPIO.LOW)
+        print()
+
+    def GPIO_clean(self):
+        GPIO.output(self.led_pins, GPIO.LOW)
+        GPIO.cleanup()
+
+if __name__ == "__main__":
+    main = Main()
+    main.set_training_data()
+    try:
+        main.train_model()
+        main.set_model_output()
+        main.GPIO_output()
     except KeyboardInterrupt:
         print("Roger That. Exiting.")
     finally:
-        GPIO.output(led_pins, GPIO.LOW)
-        GPIO.cleanup()
-
+        main.GPIO_clean()
