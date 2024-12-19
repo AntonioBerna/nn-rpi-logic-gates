@@ -5,7 +5,7 @@ import time
 from nn import NeuralNetwork, np
 
 
-class Main:
+class GPIOProcess:
     def __init__(self):
         self.led_pins = [12, 23, 32, 40]
         GPIO.setmode(GPIO.BOARD)
@@ -59,14 +59,18 @@ class Main:
         GPIO.cleanup()
 
 
-if __name__ == "__main__":
-    main = Main()
-    main.set_training_data()
+def main():
+    process = GPIOProcess()
+    process.set_training_data()
     try:
-        main.train_model()
-        main.set_model_output()
-        main.GPIO_output()
+        process.train_model()
+        process.set_model_output()
+        process.GPIO_output()
     except KeyboardInterrupt:
         print("Roger That. Exiting.")
     finally:
-        main.GPIO_clean()
+        process.GPIO_clean()
+
+
+if __name__ == "__main__":
+    main()
