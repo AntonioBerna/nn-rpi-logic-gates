@@ -205,5 +205,5 @@ In this way, using the `python src/main.py` command again we get:
 
 ## Mathematics behind Machine Learning model
 
-For more information on the mathematics behind the neural network model, I refer you to the [pdf](.github/pdf/deck.pdf) that I'm preparing.
+For more information on the mathematics behind the neural network model, I refer you to the [pdf](pdf/deck.pdf) that I'm preparing.
 
