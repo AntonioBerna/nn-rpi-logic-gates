@@ -17,11 +17,43 @@ Boole's algebra logic gates are fundamental elements in digital electronics used
 
 There are several types of logic gates, of which the most common are:
 
-<p align="center">
-    <img src=".github/imgs/logic-gates.png">
-</p>
+### AND Gate
 
-These logic gates can be combined to create more complex circuits and perform more sophisticated logic operations. For example, the AND, OR, and NOT gates can be combined to create an XOR (exclusive OR) logic gate, a NAND (NOT-AND) logic gate, a NOR (NOT-OR) logic gate, and many others.
+https://github.com/user-attachments/assets/c1486fe9-652c-4bc1-80c6-05ee8d69ee3c
+
+### OR Gate
+
+https://github.com/user-attachments/assets/2aa9c248-2174-4000-86cd-bfb08803b622
+
+### NOT Gate
+
+https://github.com/user-attachments/assets/f9e63a49-36a5-4523-89fc-5a1e4186000e
+
+### Buffer Gate
+
+https://github.com/user-attachments/assets/016ca8e3-e4c7-4118-a326-c6dc8d0acbc3
+
+### NAND Gate
+
+https://github.com/user-attachments/assets/14fd494b-f2d2-4b6a-a24d-5ba8e7dcfa7f
+
+### NOR Gate
+
+https://github.com/user-attachments/assets/cc2e8eee-cc0f-49ac-9584-d52b61caaf03
+
+### XOR Gate
+
+https://github.com/user-attachments/assets/21a63b72-68fc-429a-9559-417d54dc6422
+
+### XNOR Gate
+
+https://github.com/user-attachments/assets/05512ecc-8c12-40dd-b86d-1c70a68d5cf3
+
+These logic gates can be combined to create more complex circuits and perform more sophisticated logic operations.
+For example, the AND, OR, and NOT gates can be combined to create an XOR (exclusive OR) logic gate, a NAND (NOT-AND) logic gate, a NOR (NOT-OR) logic gate, and many others.
+
+> [!NOTE]
+> If you are interested how I create the previous videos, see the [manim-tube](https://github.com/AntonioBerna/manim-tube/) repository.
 
 ## Mini docs
 
