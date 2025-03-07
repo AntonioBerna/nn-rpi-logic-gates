@@ -20,7 +20,7 @@ There are several types of logic gates, of which the most common are:
 ### AND Gate
 
 <details>
-  <summary>Click me</summary>
+    <summary>More information</summary>
 
 https://github.com/user-attachments/assets/c1486fe9-652c-4bc1-80c6-05ee8d69ee3c
 </details>
@@ -28,7 +28,7 @@ https://github.com/user-attachments/assets/c1486fe9-652c-4bc1-80c6-05ee8d69ee3c
 ### OR Gate
 
 <details>
-  <summary>Click me</summary>
+    <summary>More information</summary>
 
 https://github.com/user-attachments/assets/2aa9c248-2174-4000-86cd-bfb08803b622
 </details>
@@ -36,7 +36,7 @@ https://github.com/user-attachments/assets/2aa9c248-2174-4000-86cd-bfb08803b622
 ### NOT Gate
 
 <details>
-  <summary>Click me</summary>
+    <summary>More information</summary>
 
 https://github.com/user-attachments/assets/f9e63a49-36a5-4523-89fc-5a1e4186000e
 </details>
@@ -44,7 +44,7 @@ https://github.com/user-attachments/assets/f9e63a49-36a5-4523-89fc-5a1e4186000e
 ### Buffer Gate
 
 <details>
-  <summary>Click me</summary>
+    <summary>More information</summary>
 
 https://github.com/user-attachments/assets/016ca8e3-e4c7-4118-a326-c6dc8d0acbc3
 </details>
@@ -52,7 +52,7 @@ https://github.com/user-attachments/assets/016ca8e3-e4c7-4118-a326-c6dc8d0acbc3
 ### NAND Gate
 
 <details>
-  <summary>Click me</summary>
+    <summary>More information</summary>
 
 https://github.com/user-attachments/assets/14fd494b-f2d2-4b6a-a24d-5ba8e7dcfa7f
 </details>
@@ -60,7 +60,7 @@ https://github.com/user-attachments/assets/14fd494b-f2d2-4b6a-a24d-5ba8e7dcfa7f
 ### NOR Gate
 
 <details>
-  <summary>Click me</summary>
+    <summary>More information</summary>
 
 https://github.com/user-attachments/assets/cc2e8eee-cc0f-49ac-9584-d52b61caaf03
 </details>
@@ -68,7 +68,7 @@ https://github.com/user-attachments/assets/cc2e8eee-cc0f-49ac-9584-d52b61caaf03
 ### XOR Gate
 
 <details>
-  <summary>Click me</summary>
+    <summary>More information</summary>
 
 https://github.com/user-attachments/assets/21a63b72-68fc-429a-9559-417d54dc6422
 </details>
@@ -76,7 +76,7 @@ https://github.com/user-attachments/assets/21a63b72-68fc-429a-9559-417d54dc6422
 ### XNOR Gate
 
 <details>
-  <summary>Click me</summary>
+    <summary>More information</summary>
 
 https://github.com/user-attachments/assets/05512ecc-8c12-40dd-b86d-1c70a68d5cf3
 </details>
